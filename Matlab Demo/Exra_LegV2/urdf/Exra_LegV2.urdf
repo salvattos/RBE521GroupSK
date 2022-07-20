@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Exra_LegV2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000233768618853291 -3.09779557959258E-19 1.70360697428266E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0199138270240577" />
+      <inertia
+        ixx="2.13311139049145E-06"
+        ixy="-5.73135927656867E-23"
+        ixz="3.83884529267489E-23"
+        iyy="3.31344688024354E-06"
+        iyz="6.66376701472719E-24"
+        izz="2.49469688024354E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.000474316425492155 -0.0025918893228663 -0.0209875218685372"
+        rpy="0 0 0" />
+      <mass
+        value="0.0144461065902208" />
+      <inertia
+        ixx="4.77423191362295E-06"
+        ixy="-6.17328350672298E-08"
+        ixz="-1.59268827661415E-08"
+        iyy="2.37306491880492E-06"
+        iyz="8.24703373598102E-08"
+        izz="4.65201298901211E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Shoulder"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.14159265358979 0.0112590342030074 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="Shoulder_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Leg_Link">
+    <inertial>
+      <origin
+        xyz="0.00267998318030074 -0.0325731607333485 -0.0013955182858969"
+        rpy="0 0 0" />
+      <mass
+        value="0.0134974453991254" />
+      <inertia
+        ixx="5.0562428962301E-06"
+        ixy="-5.36421209781768E-07"
+        ixz="-3.73570931507187E-08"
+        iyy="2.94307862484217E-06"
+        iyz="-2.50497870745336E-07"
+        izz="7.37141786780683E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Leg_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Leg_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Shoulder_Leg"
+    type="continuous">
+    <origin
+      xyz="0 0.00530059922218309 -0.028575001414303"
+      rpy="1.60077640449273 0 3.14159265358979" />
+    <parent
+      link="Shoulder_link" />
+    <child
+      link="Leg_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Foot_Link">
+    <inertial>
+      <origin
+        xyz="0.00238146619176452 0.0269979393596255 0.00830002907281078"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112121104139376" />
+      <inertia
+        ixx="3.83067077990042E-06"
+        ixy="2.8355904593866E-07"
+        ixz="1.26332191949769E-07"
+        iyy="2.56750748688605E-06"
+        iyz="-1.40379631708633E-06"
+        izz="4.08160798125138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Foot_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Foot_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Leg_Foot"
+    type="continuous">
+    <origin
+      xyz="0 -0.0507999994590122 0"
+      rpy="3.13471856830761 0 0" />
+    <parent
+      link="Leg_Link" />
+    <child
+      link="Foot_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Toe_Link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0 5.20417042793042E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.000523598775598299" />
+      <inertia
+        ixx="5.23598775598298E-09"
+        ixy="6.46234853557053E-27"
+        ixz="3.23780069938912E-26"
+        iyy="5.23598775598299E-09"
+        iyz="-4.03896783473158E-28"
+        izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Toe_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Exra_LegV2/meshes/Toe_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Foot_Toe"
+    type="fixed">
+    <origin
+      xyz="0.0010159993544223 0.0436257102862045 0.0196880544937535"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="Foot_Link" />
+    <child
+      link="Toe_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
