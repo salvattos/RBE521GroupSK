@@ -1,0 +1,17 @@
+{
+    "name": "SimplePacketComs",
+    "keywords": "packet, communication, IoT",
+    "description": "A simple packet processor for fast computer-device communications",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:madhephaestus/SimplePacketComs.git"
+    },
+    "authors": [
+        {
+            "name": "Kevin Harrington",
+            "email": "harrington@wpi.edu",
+            "maintainer": true
+        }
+    ],
+    "version": "0.1.1"
+}
