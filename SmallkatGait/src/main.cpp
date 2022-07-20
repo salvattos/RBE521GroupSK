@@ -149,19 +149,19 @@ void loop() {
   // put your main code here, to run repeatedly:
   // run walk cycle
   // how long does a single cycle take?
-  int cycle_time = 999; 
+  int cycle_time = 1000; 
   int currtime = esp_timer_get_time();
- // leg_vals leg = legTraj((currtime-lasttime)/cycle_time);
-  // servoRR_BP.write(leg.BasePan);
-  // servoRR_BT.write(leg.BaseTilt);
-  // servoRR_BP.write(leg.Elbow);
+  leg_vals leg = legTraj((currtime-lasttime)/cycle_time);
+   servoRR_BP.write(leg.BasePan);
+   servoRR_BT.write(leg.BaseTilt);
+   servoRR_BP.write(leg.Elbow);
   // servoRR_BP.write(50);
   // servoRR_BT.write(28);
   // servoRR_EB.write(18);
   
-  servoRR_BP.write(50);
-  servoRR_BT.write(40);
-  servoRR_EB.write(180);
+  //servoRR_BP.write(50);
+  //servoRR_BT.write(40);
+  //servoRR_EB.write(180);
   lasttime = currtime;
 }
 
