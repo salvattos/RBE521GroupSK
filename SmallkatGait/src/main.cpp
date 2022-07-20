@@ -140,11 +140,23 @@ void loop() {
   leg_vals leg = legTraj((currtime-lasttime)/cycle_time);
   servoRR_BP.write(50);
   servoRR_BT.write(90);
+<<<<<<< Updated upstream
   servoRR_BP.write(100);
+=======
+  servoRR_EB.write(100);
+>>>>>>> Stashed changes
   lasttime = currtime;
 }
 
 leg_vals legTraj(int time){
   // this function evaluates the trajectory we determine for the leg tip and returns a struct of the joint values needed to reach this point. 
+<<<<<<< Updated upstream
 
+=======
+  // find the value of x at the inputted time 
+  // create a lookup table for the trajectory of the robot as calculated in MATLAB
+  int BasePan[] = 
+  int BaseTilt[] = 
+  int 
+>>>>>>> Stashed changes
 }
