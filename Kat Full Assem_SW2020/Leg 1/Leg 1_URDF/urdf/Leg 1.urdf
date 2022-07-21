@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Leg 1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0762195955039612 0.0262176948229867 0.0144867614419253"
+        rpy="0 0 0" />
+      <mass
+        value="0.0125618282723237" />
+      <inertia
+        ixx="4.15150509781223E-06"
+        ixy="5.36808969042723E-08"
+        ixz="-1.38494130731963E-08"
+        iyy="2.06353446899435E-06"
+        iyz="-7.17138703308798E-08"
+        izz="4.04522783923699E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="MidLeg">
+    <inertial>
+      <origin
+        xyz="-0.021222013601792 -0.032573157616856 -0.00139550614178145"
+        rpy="0 0 0" />
+      <mass
+        value="0.0117369306599724" />
+      <inertia
+        ixx="4.39673410622928E-06"
+        ixy="4.66453659016157E-07"
+        ixz="3.24883188987554E-08"
+        iyy="2.55920653634242E-06"
+        iyz="-2.17824408801405E-07"
+        izz="6.40993510834868E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/MidLeg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/MidLeg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.057203 -0.0068993 0.018325"
+      rpy="2.638 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="MidLeg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="foot">
+    <inertial>
+      <origin
+        xyz="-0.0209234519430611 0.0269979340159687 0.00830002370494739"
+        rpy="0 0 0" />
+      <mass
+        value="0.00974966585968312" />
+      <inertia
+        ixx="3.33101901046515E-06"
+        ixy="-2.46572554682977E-07"
+        ixz="-1.09854298192379E-07"
+        iyy="2.23261798488565E-06"
+        iyz="-1.22069282450655E-06"
+        izz="3.54922695982643E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Leg 1/meshes/foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0508 0"
+      rpy="-2.703 0 0" />
+    <parent
+      link="MidLeg" />
+    <child
+      link="foot" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

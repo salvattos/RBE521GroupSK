@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'BodyToNeck', 'NeckToHead', 'BodyToTail', 'TailToTip', 'BodyToRFShoulder', 'RFShoulderToRFLeg', 'RFLegToRFFoot', 'BodyToLFShoulder', 'LFShoulderToLFLeg', 'LFLegToLFFoot', 'BodyToRBShoulder', 'RBShoulderToRBLeg', 'RBLegToRBFoot', 'BodyToLBShoulder', 'LBShoulderToLBLeg', 'LBLegToLBFoot', ]
